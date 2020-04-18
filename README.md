@@ -71,10 +71,14 @@ Other OSs that were considered, and the reasons they weren't chosen:
 
 # Shell
 For now, Bash will be the shell but there are a few strong contenders listed
-below. Again, two lists, one for viable candidates and one for discards and why.
+below. 
+
+### Contenders
 
 * bash - default and familiar, no lambdas
 * zsh - fully featured
+
+Others, not considered further.
 
 * csh (no functions)
 * fish (no RE built-in, no string processing)
@@ -128,6 +132,8 @@ running and why.
 * urxvt - configurable, fast, not much activity
 * xfce - drag and drop, configurable, active
 * xterm - lightweight, minimal, oldest, somewhat active
+
+Others, not considered further.
 
 * gnome terminal (very basic)
 * konsole (KDE default, tabs)
