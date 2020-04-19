@@ -28,6 +28,7 @@ following languages (in order of importance):
 * Python 3
 * C++
 * Assembly
+* Python 2
 
 ## Architectures
 
