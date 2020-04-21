@@ -46,7 +46,9 @@ chsh -s /bin/bash ${USER}
 
 # Install X server
 info "Installing X server"
-apt install --assume-yes xserver-xorg libgl1-mesa-dri xserver-xorg-legacy xserver-xorg-video-all
+apt install --assume-yes xserver-xorg libgl1-mesa-dri
+apt install --assume-yes xserver-xorg-legacy xserver-xorg-video-all
+apt install --assume-yes x11-xserver-utils xorg-docs-core
 
 # Install terminal emulator
 info "Installing terminal emulator"
@@ -65,6 +67,7 @@ pip3 install whither
 apt install --assume-yes liblightdm-gobject-1-0-dev python3-gi
 wget https://download.opensuse.org/repositories/home:/antergos/xUbuntu_17.10/amd64/lightdm-webkit2-greeter_2.2.5-1+15.31_amd64.deb
 dpkg -i lightdm-webkit2-greeter_2.2.5-1+15.31_amd64.deb
+rm -f lightdm-webkit2-greeter_2.2.5-1+15.31_amd64.deb
 mkdir /usr/share/backgrounds
 
 # Install window manager
