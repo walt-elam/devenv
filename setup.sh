@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+#   Development environment setup script
+################################################################################
 
 # Helper functions
 msg ()
@@ -73,6 +76,7 @@ mkdir /usr/share/backgrounds
 # Install window manager
 info "Installing window manager"
 apt install --assume-yes i3
+apt install --assume-yes feh imagemagick
 
 # Configure X server
 cat > /etc/X11/xorg.conf << EOF
@@ -91,16 +95,30 @@ EOF
 
 # Configure display manager
 cat > /etc/lightdm/lightdm.conf << EOF
+#
 # LightDM Configuration
+#
+# All settings documented in /usr/share/doc/lightdm/lightdm.conf.gz
+################################################################################
 
 [LightDM]
 backup-logs=false
 
 [Seat:*]
 allow-guest=false
+allow-user-switching=true
+exit-on-failure=true
+greeter-allow-guest=false
 greeter-session=lightdm-webkit2-greeter
 user-session=i3
+xserver-allow-tcp=true
 xserver-command=X -core
+
+[XDMCPServer]
+enabled=false
+
+[VNCServer]
+enabled=false
 
 EOF
 
