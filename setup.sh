@@ -174,6 +174,10 @@ wget https://github.com/BurntSushi/ripgrep/releases/download/${ripgrep_ver}/${ri
 dpkg -i ${ripgrep_file}
 rm ${ripgrep_file}
 
+# ASCIInema
+info "Installing ASCIInema"
+pip3 install asciinema 
+
 # Cleanup
 info "Cleaning up package repositories"
 apt autoremove
