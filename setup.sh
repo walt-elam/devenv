@@ -80,7 +80,11 @@ apt install --assume-yes feh imagemagick
 
 # Configure X server
 cat > /etc/X11/xorg.conf << EOF
+#
+# xorg.conf
+#
 # Xorg Server Configuration
+################################################################################
 
 Section "ServerFlags"
     Option "BlankTime" "5"
@@ -121,6 +125,11 @@ enabled=false
 enabled=false
 
 EOF
+
+# Setup VNC server
+info "Setting up VNC server"
+apt install --assume-yes tigervnc-standalone-server tigervnc-common
+apt install --assume-yes tigervnc-xorg-extension
 
 # Setup C development tools
 info "Setting up C"
