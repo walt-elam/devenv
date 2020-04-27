@@ -176,7 +176,7 @@ rm ${ripgrep_file}
 
 # ASCIInema
 info "Installing ASCIInema"
-pip3 install asciinema 
+pip3 install asciinema
 
 # Cleanup
 info "Cleaning up package repositories"
