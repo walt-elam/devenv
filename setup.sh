@@ -166,6 +166,14 @@ apt install --assume-yes vim-tiny
 info "Installing git"
 apt install --assume-yes git git-doc git-lfs git-man
 
+# Ripgrep
+info "Installing ripgrep"
+ripgrep_ver="12.0.1"
+ripgrep_file="ripgrep_${ripgrep_ver}_amd64.deb"
+wget https://github.com/BurntSushi/ripgrep/releases/download/${ripgrep_ver}/${ripgrep_file}
+dpkg -i ${ripgrep_file}
+rm ${ripgrep_file}
+
 # Cleanup
 info "Cleaning up package repositories"
 apt autoremove
