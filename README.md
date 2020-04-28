@@ -146,7 +146,8 @@ Others, not considered further.
 * yaquake (drop down like quake)
 
 ## File Manager
-Dolphin is fast and extensible with nice features.
+Since the base system normally uses Gnome, it's easiest to use GNOME Files as
+the file manager. Switching is difficult per Ubuntu documentation.
 
 A graphical file manager is preferred over an orthodox/CLI like file manager,
 which ruled out a lot of options. As with the other software, I wanted a file
@@ -154,7 +155,7 @@ manager which is currently maintained.
 
 ### Contenders
 
-* GNOME Files (Nautilus) - fast search, handles archives, no list view/grouping, no file encryption, no browsing compressed folders
+* Dolphin - default in KDE, fast, maintained, extensible
 * Thunar - fast/lightweight/extensible, no grouping/undo/redo/encryption or browsing compressed folders
 * Xfe - handles archives and has themes, no grouping/encryption or browsing compressed folders, not extensible, limited search capabilities
 
