@@ -228,6 +228,10 @@ wget https://github.com/junegunn/fzf-bin/releases/download/${fzf_ver}/${fzf_file
 tar -xvf ${fzf_file}
 mv fzf /usr/local/bin
 
+# LaTeX
+info "Installing LaTeX"
+apt install --assume-yes texlive-latex-base evince
+
 # ASCIInema
 info "Installing ASCIInema"
 pip3 install asciinema
