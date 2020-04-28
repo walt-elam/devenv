@@ -174,6 +174,14 @@ wget https://github.com/BurntSushi/ripgrep/releases/download/${ripgrep_ver}/${ri
 dpkg -i ${ripgrep_file}
 rm ${ripgrep_file}
 
+# FZF
+info "Installing FZF"
+fzf_ver="0.21.1"
+fzf_file="fzf-${fzf_ver}-linux_amd64.tgz"
+wget https://github.com/junegunn/fzf-bin/releases/download/${fzf_ver}/${fzf_file}
+tar -xvf ${fzf_file}
+mv fzf /usr/local/bin
+
 # ASCIInema
 info "Installing ASCIInema"
 pip3 install asciinema
