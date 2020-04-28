@@ -208,7 +208,7 @@ apt install --assume-yes vim-tiny
 info "Installing git"
 apt install --assume-yes git git-doc git-lfs git-man
 
-# Ripgrep
+# ripgrep
 info "Installing ripgrep"
 ripgrep_ver="12.0.1"
 ripgrep_file="ripgrep_${ripgrep_ver}_amd64.deb"
