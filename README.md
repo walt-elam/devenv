@@ -15,6 +15,7 @@ on how they were chosen can be found below.
 * Display Manager: LightDM
 * Window Manager: i3wm
 * Terminal: xterm
+* File Manager: dolphin
 
 # Requirements and Goals
 The overarching goal of this development environment is to support systems
@@ -143,4 +144,17 @@ Others, not considered further.
 * terminator (has tiles and tabs)
 * terminology (file preview system)
 * yaquake (drop down like quake)
+
+## File Manager
+Dolphin is fast and extensible with nice features.
+
+A graphical file manager is preferred over an orthodox/CLI like file manager,
+which ruled out a lot of options. As with the other software, I wanted a file
+manager which is currently maintained.
+
+### Contenders
+
+* GNOME Files (Nautilus) - fast search, handles archives, no list view/grouping, no file encryption, no browsing compressed folders
+* Thunar - fast/lightweight/extensible, no grouping/undo/redo/encryption or browsing compressed folders
+* Xfe - handles archives and has themes, no grouping/encryption or browsing compressed folders, not extensible, limited search capabilities
 

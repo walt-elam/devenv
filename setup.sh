@@ -78,6 +78,10 @@ info "Installing window manager"
 apt install --assume-yes i3
 apt install --assume-yes feh imagemagick
 
+# Install file manager
+info "Installing file manager"
+apt install --assume-yes dolphin
+
 # Configure X server
 cat > /etc/X11/xorg.conf << EOF
 #
