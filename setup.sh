@@ -143,6 +143,7 @@ info "Setting up python3"
 apt install --assume-yes python3 python3-pip
 pip3 install --upgrade pip
 pip3 install --upgrade setuptools
+pip3 install pycodestyle
 
 # Setup C++ development tools
 info "Setting up C++"
@@ -157,6 +158,7 @@ info "Setting up python2"
 apt install --assume-yes python2 python-pip
 pip install --upgrade pip
 pip install --upgrade setuptools
+pip install pycodestyle
 
 # Editor
 info "Installing editor"
