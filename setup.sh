@@ -126,6 +126,46 @@ enabled=false
 
 EOF
 
+# Configure SSH
+cat > /etc/ssh/sshd_config << EOF
+#
+# sshd_config
+#
+# OpenSSH SSH daemon configuration
+################################################################################
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+# Only allow IPv4 connections
+AddressFamily inet
+
+# Disable challenge/response authentication
+ChallengeResponseAuthentication no
+
+# Users must authenticate within this many seconds
+LoginGraceTime 30
+
+# Maximum failed login attempts before logging
+MaxAuthTries 3
+
+# Maximum concurrent sessions per connection
+MaxSessions 4
+
+# Maximum logins being attempted at any one time
+MaxStartups 2
+
+# Do not allow root logins
+PermitRootLogin no
+
+# Enable SFTP subsystem
+Subsystem sftp	/usr/lib/openssh/sftp-server
+
+# Allow PAM authentication
+UsePAM yes
+
+EOF
+
 # Setup VNC server
 info "Setting up VNC server"
 apt install --assume-yes tigervnc-standalone-server tigervnc-common
