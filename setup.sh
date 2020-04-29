@@ -218,7 +218,7 @@ ripgrep_ver="12.0.1"
 ripgrep_file="ripgrep_${ripgrep_ver}_amd64.deb"
 wget https://github.com/BurntSushi/ripgrep/releases/download/${ripgrep_ver}/${ripgrep_file}
 dpkg -i ${ripgrep_file}
-rm ${ripgrep_file}
+rm -f ${ripgrep_file}
 
 # FZF
 info "Installing FZF"
@@ -227,6 +227,7 @@ fzf_file="fzf-${fzf_ver}-linux_amd64.tgz"
 wget https://github.com/junegunn/fzf-bin/releases/download/${fzf_ver}/${fzf_file}
 tar -xvf ${fzf_file}
 mv fzf /usr/local/bin
+rm -f ${fzf_file}
 
 # LaTeX
 info "Installing LaTeX"
