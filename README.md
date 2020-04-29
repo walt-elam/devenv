@@ -15,7 +15,7 @@ on how they were chosen can be found below.
 * Display Manager: LightDM
 * Window Manager: i3wm
 * Terminal: xterm
-* File Manager: GNOME files
+* File Manager: GNOME files (nautilus)
 
 # Requirements and Goals
 The overarching goal of this development environment is to support systems

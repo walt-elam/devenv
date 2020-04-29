@@ -35,6 +35,8 @@ if [ 0 != $(id -u) ]; then
     err_exit 1 "This script must be run as root!"
 fi
 
+arch=$(dpkg --print-architecture)
+
 # Update default software
 info "Updating package index"
 apt update
@@ -59,19 +61,22 @@ apt install --assume-yes xterm x11-utils
 
 # Install display manager
 info "Installing display manager"
-apt install --assume-yes lightdm
-dpkg-reconfigure lightdm
+DEBIAN_FRONTEND=noninteractive apt install --assume-yes lightdm
+echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
+dpkg-reconfigure -fnoninteractive lightdm
 
 # Install greeter
 info "Installing greeter"
 apt install --assume-yes python3-pip
 pip3 install pyqt5==5.14
 pip3 install whither
-apt install --assume-yes liblightdm-gobject-1-0-dev python3-gi
-wget https://download.opensuse.org/repositories/home:/antergos/xUbuntu_17.10/amd64/lightdm-webkit2-greeter_2.2.5-1+15.31_amd64.deb
-dpkg -i lightdm-webkit2-greeter_2.2.5-1+15.31_amd64.deb
-rm -f lightdm-webkit2-greeter_2.2.5-1+15.31_amd64.deb
-mkdir /usr/share/backgrounds
+apt install --assume-yes liblightdm-gobject-1-dev python3-gi
+ldmg_ver="2.2.5-1+15.31"
+ldmg_file="lightdm-webkit2-greeter_${ldmg_ver}_${arch}.deb"
+wget https://download.opensuse.org/repositories/home:/antergos/xUbuntu_17.10/${arch}/${ldmg_file}
+dpkg -i ${ldmg_file}
+rm -f ${ldmg_file}
+mkdir -p /usr/share/backgrounds
 
 # Install window manager
 info "Installing window manager"
@@ -186,8 +191,9 @@ apt install --assume-yes manpages-dev manpages-posix manpages-posix-dev
 info "Setting up python3"
 apt install --assume-yes python3 python3-pip
 pip3 install --upgrade pip
+pip3 install --upgrade testresources
 pip3 install --upgrade setuptools
-pip3 install pycodestyle
+pip3 install --upgrade pycodestyle
 
 # Setup C++ development tools
 info "Setting up C++"
@@ -199,10 +205,10 @@ apt install --assume-yes nasm
 
 # Setup python2
 info "Setting up python2"
-apt install --assume-yes python2 python-pip
+apt install --assume-yes python2
 pip install --upgrade pip
 pip install --upgrade setuptools
-pip install pycodestyle
+pip install --upgrade pycodestyle
 
 # Editor
 info "Installing editor"
@@ -214,20 +220,11 @@ apt install --assume-yes git git-doc git-lfs git-man
 
 # ripgrep
 info "Installing ripgrep"
-ripgrep_ver="12.0.1"
-ripgrep_file="ripgrep_${ripgrep_ver}_amd64.deb"
-wget https://github.com/BurntSushi/ripgrep/releases/download/${ripgrep_ver}/${ripgrep_file}
-dpkg -i ${ripgrep_file}
-rm -f ${ripgrep_file}
+apt install --assume-yes ripgrep
 
 # FZF
 info "Installing FZF"
-fzf_ver="0.21.1"
-fzf_file="fzf-${fzf_ver}-linux_amd64.tgz"
-wget https://github.com/junegunn/fzf-bin/releases/download/${fzf_ver}/${fzf_file}
-tar -xvf ${fzf_file}
-mv fzf /usr/local/bin
-rm -f ${fzf_file}
+apt install --assume-yes fzf
 
 # LaTeX
 info "Installing LaTeX"
@@ -235,11 +232,16 @@ apt install --assume-yes texlive-latex-base evince
 
 # ASCIInema
 info "Installing ASCIInema"
-pip3 install asciinema
+pip3 install --upgrade asciinema
+
+# Browser
+info "Installing browser"
+apt install --assume-yes firefox
 
 # Cleanup
 info "Cleaning up package repositories"
-apt autoremove
+apt purge --assume-yes cloud-init
+apt autoremove --assume-yes
 
 # Reboot into new system
 info "Rebooting..."
