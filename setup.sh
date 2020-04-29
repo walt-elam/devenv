@@ -184,6 +184,7 @@ apt install --assume-yes tigervnc-xorg-extension
 info "Setting up C"
 apt install --assume-yes gcc gcc-multilib 
 apt install --assume-yes binutils gdb make valgrind
+apt install --assume-yes automake cmake
 apt install --assume-yes linux-source libc6-dev
 apt install --assume-yes manpages-dev manpages-posix manpages-posix-dev
 
@@ -199,7 +200,7 @@ pip3 install --upgrade pycodestyle
 info "Setting up C++"
 apt install --assume-yes g++ g++-multilib
 
-# Setup assemly development tools
+# Setup assembly development tools
 info "Setting up assembly"
 apt install --assume-yes nasm
 
