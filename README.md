@@ -13,7 +13,7 @@ on how they were chosen can be found below.
 * Shell: bash
 * X Server: X.org server
 * Display Manager: LightDM
-* Window Manager: i3wm
+* Window Manager: Openbox
 * Terminal: xterm
 * File Manager: GNOME files (nautilus)
 
@@ -108,13 +108,15 @@ Ubuntu (and was the default until 16.04).
 * XDM (reference implementation, but no real features)
 
 ## Window Manager 
-i3 is a flexible display manager that is well documented, widely used, and
-easily configurable.
+Openbox is a standards compliant window manager that provides an incredible
+level of customization. This is primarily through XML which I don't prefer, but
+the level of customization is hard to beat.
 
 ### Contenders
 
 * awesome (fast, but configured via LUA)
 * dwm (must be recompiled to reconfigure)
+* i3 (no option for maximize/close buttons in titlebar)
 * monsterwm (small and configurable, but must be recompiled)
 
 ## Terminal Emulator

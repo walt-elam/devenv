@@ -80,7 +80,8 @@ mkdir -p /usr/share/backgrounds
 
 # Install window manager
 info "Installing window manager"
-apt install --assume-yes i3
+apt install --assume-yes openbox obconf obsession
+apt install --assume-yes tint2 wmctrl
 apt install --assume-yes feh imagemagick
 
 # Install file manager
@@ -123,7 +124,7 @@ allow-user-switching=true
 exit-on-failure=true
 greeter-allow-guest=false
 greeter-session=lightdm-webkit2-greeter
-user-session=i3
+user-session=openbox
 xserver-allow-tcp=true
 xserver-command=X -core
 
