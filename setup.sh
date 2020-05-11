@@ -239,6 +239,10 @@ pip3 install --upgrade asciinema
 info "Installing browser"
 apt install --assume-yes firefox
 
+# Other
+info "Installing other utilities"
+apt install --assume-yes tree
+
 # Cleanup
 info "Cleaning up package repositories"
 apt purge --assume-yes cloud-init
