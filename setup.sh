@@ -58,6 +58,7 @@ apt install --assume-yes x11-xserver-utils xorg-docs-core
 # Install terminal emulator
 info "Installing terminal emulator"
 apt install --assume-yes xterm x11-utils
+update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/xterm 40
 
 # Install display manager
 info "Installing display manager"
