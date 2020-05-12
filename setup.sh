@@ -217,6 +217,8 @@ pip install --upgrade pycodestyle
 info "Installing editor"
 apt install --assume-yes vim
 update-alternatives --install /usr/bin/editor editor /usr/bin/vim.basic 50
+update-alternatives --install /usr/bin/vi vi /usr/bin/vim.basic 50
+update-alternatives --install /usr/bin/vim vim /usr/bin/vim.basic 50
 
 # Git
 info "Installing git"
