@@ -241,6 +241,8 @@ pip3 install --upgrade asciinema
 # Browser
 info "Installing browser"
 apt install --assume-yes firefox
+update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/firefox 50
+
 
 # Other
 info "Installing other utilities"
