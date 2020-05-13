@@ -83,7 +83,7 @@ mkdir -p /usr/share/backgrounds
 info "Installing window manager"
 apt install --assume-yes openbox obconf obsession
 apt install --assume-yes tint2 wmctrl
-apt install --assume-yes feh imagemagick
+apt install --assume-yes feh imagemagick orage
 
 # Install file manager
 info "Installing file manager"
