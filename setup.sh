@@ -245,10 +245,9 @@ info "Installing browser"
 apt install --assume-yes firefox
 update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/firefox 50
 
-
 # Other
 info "Installing other utilities"
-apt install --assume-yes tree
+apt install --assume-yes tree zip
 
 # Cleanup
 info "Cleaning up package repositories"
