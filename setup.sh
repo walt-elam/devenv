@@ -220,25 +220,12 @@ update-alternatives --install /usr/bin/editor editor /usr/bin/vim.basic 50
 update-alternatives --install /usr/bin/vi vi /usr/bin/vim.basic 50
 update-alternatives --install /usr/bin/vim vim /usr/bin/vim.basic 50
 
-# Git
-info "Installing git"
+# Extra dev tools
+info "Installing extra dev tools"
 apt install --assume-yes git git-doc git-lfs git-man
-
-# ripgrep
-info "Installing ripgrep"
 apt install --assume-yes ripgrep
-
-# FZF
-info "Installing FZF"
 apt install --assume-yes fzf
-
-# LaTeX
-info "Installing LaTeX"
-apt install --assume-yes texlive-latex-base evince
-
-# ASCIInema
-info "Installing ASCIInema"
-pip3 install --upgrade asciinema
+apt install --assume-yes global
 
 # Browser
 info "Installing browser"
@@ -248,6 +235,8 @@ update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/fire
 # Other
 info "Installing other utilities"
 apt install --assume-yes tree zip
+apt install --assume-yes texlive-latex-base evince
+pip3 install --upgrade asciinema
 
 # Cleanup
 info "Cleaning up package repositories"
