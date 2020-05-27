@@ -192,7 +192,7 @@ apt install --assume-yes manpages-dev manpages-posix manpages-posix-dev
 
 # Setup python3 development tools
 info "Setting up python3"
-apt install --assume-yes python3 python3-pip python3-venv pylint
+apt install --assume-yes python3 python3-pip python3-venv
 pip3 install --upgrade pip
 pip3 install --upgrade testresources
 pip3 install --upgrade setuptools
